@@ -243,13 +243,13 @@ function updateProgressCircle(easyValue, mediumValue, hardValue, total, easyTota
   )`;
 
     // Update the numbers
-    document.querySelector(".progress-number").textContent =364;
+    document.querySelector(".progress-number").textContent = easyValue + mediumValue + hardValue;
+
     document.querySelector(".progress-total").textContent = total;
 
-    // Update the details
-    document.querySelector(".easy .value").textContent = 153;
-    document.querySelector(".medium .value").textContent = 184;
-    document.querySelector(".hard .value").textContent = 27;
+    document.querySelector(".easy .value").textContent = easyValue;
+    document.querySelector(".medium .value").textContent = mediumValue;
+    document.querySelector(".hard .value").textContent = hardValue;
 
     document.querySelector(".easy .total").textContent = easyTotal;
     document.querySelector(".medium .total").textContent = mediumTotal;
@@ -258,23 +258,23 @@ function updateProgressCircle(easyValue, mediumValue, hardValue, total, easyTota
 
 // Example usage (replace this with your actual backend fetch)
 async function fetchDataFromBackend() {
-    const response = await fetch(
-        "https://leetcode-stats-api.herokuapp.com/GajendranA"
-    );
-    const resData = await response.json();
-    console.log(resData);
+    // const response = await fetch(
+    //     "https://leetcode-stats-api.herokuapp.com/GajendranA"
+    // );
+    // const resData = await response.json();
+    // console.log(resData);
 
-    const data = {
-        easy: resData.easySolved,
-        easyTotal: resData.totalEasy,
-        medium: resData.mediumSolved,
-        mediumTotal: resData.totalMedium,
-        hard: resData.hardSolved,
-        hardTotal: resData.totalHard,
-        total: resData.totalQuestions,
-    };
+    // const data = {
+    //     easy: resData.easySolved,
+    //     easyTotal: resData.totalEasy,
+    //     medium: resData.mediumSolved,
+    //     mediumTotal: resData.totalMedium,
+    //     hard: resData.hardSolved,
+    //     hardTotal: resData.totalHard,
+    //     total: resData.totalQuestions,
+    // };
 
-    updateProgressCircle(data.easy, data.medium, data.hard, data.total, data.easyTotal, data.mediumTotal, data.hardTotal);
+    updateProgressCircle(130,201,33,3600, 883, 1871, 846);
 }
 
 // Call this function when you want to fetch and update the data
